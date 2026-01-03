@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>割り勘アプリ</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+<body>
+  <!-- この中に記述していく -->
+  <!-- ここから下にコードを書く -->
+  <h1 class="main_title">めんどくさがり屋のための割り勘アプリ</h1>
+
+  <div class="account">
+    <p class="request_account_info">アカウント情報を記載してください</p>
+    <textarea name="支払い情報" id="account_info" , placeholder="paypay:ABCD"></textarea>
+  </div>
+
+  <div class="save_btn_1">
+    <button class="save_account_btn">アカウント情報を保存する</button>
+  </div>
+
+  <div class="thank_you">
+    <p class="request_thank_you">お礼メッセージを記入してください</p>
+    <textarea name="コメント" id="thank_you_message" , placeholder="thank_you_message先日はありがとうございました"></textarea>
+  </div>
+
+  <div class="save_btn_2">
+    <button class="save_btn">メッセージのテンプレートを保存する</button>
+  </div>
+
+  <div class="number">
+    <p>参加者数を教えてください</p>
+    <input id="num_of_people"  type="number">
+  </div>
+
+<div>
+  <button id="btn_ppl">参加人数を送信</button>
+  </div>
+
+  <div class="exp">
+    <p class="exp_message">参加者の名前と、それぞれの人の負担額の割合のイメージをざっくり入れてください。</p>
+    <p class="exp_message">割合イメージの合計は、実際の会計額とずれていても問題はありません（適当でOKです）</p>
+        <p class="exp_message">大体の目安は、事業部長4000、部長3500,課長3000,メンバー2500くらいの値を入れればOKです</p>
+  </div>
+
+
+  <div class="title">
+    <h2 class="date_input">
+      <input type="datetime-local" name="" id="date_and_year">
+    </h2>
+  </div>
+
+  <!-- -----以下を削除するーーーーー -->
+  <!-- <div class="member">
+    <div class="name">
+      <h2 class="people1">参加者1</h2>
+      <input type="text" class="people_name", id="people_name_1">
+    </div>
+
+    <div class="expected_amount">
+      <h2 class="people1">参加者1の負担イメージ額</h2>
+      <input type="number" name="部長" id="people_exp_1">
+    </div>
+  </div> -->
+
+   <!-- <div class="member2">
+    <div class="name">
+      <h2 class="people2">参加者2</h2>
+      <input type="text" class="people2_name">
+    </div>
+
+    <div class="expected_amount">
+      <h2 class="people2">参加者2の負担イメージ額</h2>
+      <input type="number" name="課長" id="people2_exp">
+    </div>
+  </div>
+
+    <div class="member3">
+    <div class="name">
+      <h2 class="people3">参加者3</h2>
+      <input type="text" class="people3_name">
+    </div>
+
+    <div class="expected_amount3">
+      <h2 class="people3">参加者3の負担イメージ額</h2>
+      <input type="number" name="メンバー" id="people3_exp">
+    </div>
+  </div> -->
+  <!-- -----ここまでーーーーー -->
+
+  <h2 class="money">使った金額</h2>
+  <input type="number" name="お金" id="value">
+
+  <div class="start">
+    <button class="start_btn">上記を保存して計算開始</button>
+  </div>
+
+<!-- -----以下を削除するーーーーー -->
+  <!-- <div class="cal_result_1">
+    <h2 class="people1_cal">参加者1の支払い金額</h2>
+    <h2 class="people1_cal_val">計算結果</h2>
+  </div>
+
+  <div class="cal_result_2">
+    <h2 class="people2_cal">参加者2の支払い金額</h2>
+    <h2 class="people2_cal_val">計算結果</h2>
+  </div>
+
+  <div class="cal_result_2">
+    <h2 class="people3_cal">参加者3の支払い金額</h2>
+    <h2 class="people3_cal_val">計算結果</h2>
+  </div>
+
+  -->　<!-- -----ここまでーーーーー -->
+
+  <div class="btn_2">
+    <button class="create_msg_btn">メッセージを作る</button>
+  </div> 
+
+  <div class="message">
+    <textarea name="請求メッセージ" id="draft_message" placeholder="先日はありがとうございました"></textarea>
+  </div>
+
+    <div class="send_btn">
+    <button class="message_send_btn">メッセージを送信</button>
+  </div>
+
+  <div class="rm_account">
+    <button class="rm_account_btn">アカウント情報を削除する</button>
+  </div>
+
+  <div class="rm_template_message">
+    <button class="rm_msg_btn">メッセージテンプレートを削除する</button>
+  </div>
+
+  <div class="output">
+
+  </div>
+  <!-- ここから上にコードを書く -->
+  <!-- この中に記述していく -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="js/main.js"></script>
+
+
+<script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
+        import { getDatabase, ref, push, set, onChildAdded, remove, onChildRemoved }
+            from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBFnmrWfPrFyW-NEj7SITL1T_00hww-B0g",
+            authDomain: "dev30-f18-23c94.firebaseapp.com",
+            projectId: "dev30-f18-23c94",
+            storageBucket: "dev30-f18-23c94.firebasestorage.app",
+            messagingSenderId: "867812372908",
+            appId: "1:867812372908:web:98218493ec3170451b0a09"
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app); //RealtimeDBに接続
+        const dbRef = ref(db, "chat"); //RealtimeDB内の"chat"を使う
+
+        //データ登録(Click)
+        //送信
+        
+        $('.message_send_btn').on('click', function () {
+        
+            const msg = {
+                date : $('#date_and_year').val(),
+                message: $('#draft_message').val(),
+            }
+
+            const newPostRef = push(dbRef)
+            set(newPostRef, msg)
+
+
+            //この下は消さない
+        });
+
+        //データ登録(Enter)
+        onChildAdded(dbRef, function (data) {
+
+            const msg = data.val()
+            const key = data.key //keyの部分は課題またはごじしんで使用いただくための
+
+            const html = `
+                <div>
+                <p> -------------------------- </p>
+                <h2> ${msg.date} </h2>  
+                <p> ${msg.message} </p>
+                <p> -------------------------- </p>
+                <p> -------------------------- </p>
+                </div>
+            `
+
+            //jQueryを使って表示をさせたいのでappendというおまじないを使う
+            $('.output').append(html)
+            //この下は消さない
+        })
+
+        //最初にデータ取得＆onSnapshotでリアルタイムにデータを取得
+       
+        //この下は消さない
+      
+
+
+
+
+    </script>
+
+</body>
+
+</html>
