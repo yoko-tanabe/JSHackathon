@@ -1,9 +1,38 @@
 /* ここから下に記載していく */
+body{
+  font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','TsukuARdGothic-Regular','ヒラギノ角ゴシック','Hiragino Sans','メイリオ', Meiryo, 
+sans-serif;
+
+}
+
+
+
 textarea{
     width :30%;
     height: 150px;
 }
 
+h1{
+  font-size: 90px;
+}
+
+#title{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 45px;
+    height: 300px;
+    /* CSSファイルからの相対になっているようです */
+    background-image: url(background.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title_contents{
+  /* height: 200px; */
+
+}
 
 
 /* .output {
@@ -15,3 +44,98 @@ textarea{
   border-radius: 8px;
   padding: 10px;
 } */ 
+
+/* h3 {
+  position: relative;
+  color: #4b4949;
+  display: inline-block;
+  margin: 47px 0;
+  text-shadow: 0 0 2px white;
+  font-size: 25px;
+}
+h3:before {
+  content: "";
+  position: absolute;
+  background: #ffd69d;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: -1;
+} */
+
+
+h3 {
+  position: relative;
+  padding: 0.25em 0;
+}
+h3:after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: -webkit-linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+  background: linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+}
+
+p{
+ color: #333;
+}
+
+.account, .thank_you, .number, .guess, .title, .subtitle, .createMessage, .message, .transfer{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.explanation,.exp {
+   margin: 2em auto; /* 外側余白 */
+   padding: 2em; /* 内側余白 */
+   background: none; /* 元のボックス背景色なし */
+   border: 1px solid #ccc; /* 線の太さ（1px）、種類（実線）、色（#ccc） */
+   position: relative; /* 配置（基準となる位置） */
+   max-width: 800px; /* 最大幅 */
+
+   
+}
+
+
+.explanation:after , .exp:after{
+   background-color: #eee; /* ずらしたボックスの背景色 */
+   border: none; /* 枠線なし */
+   content: ''; /* 擬似要素にコンテンツなし */
+   position: absolute; /* 配置（ここを動かす） */
+   top: 7px; /* 上から7pxずらす */
+   left: 7px; /* 左から7pxずらす */
+   width: 100%; /* 幅100%（親要素に合わせる） */
+   height: 100%; /* 高さ100%（親要素に合わせる） */
+   z-index: -1; /* 背景として後ろに表示 */
+}
+
+/* ボックス内の段落 */
+.explanation p { margin:0; }
+
+#return_home_btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #87befd;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 5px #87befd;
+  border: dashed 1px #FFF;
+  transition: .4s;
+}
+
+#return_home_btn:hover {
+  background: #668ad8;
+  box-shadow: 0px 0px 0px 5px #668ad8;
+}

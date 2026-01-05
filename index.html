@@ -15,50 +15,143 @@
 <body>
   <!-- この中に記述していく -->
   <!-- ここから下にコードを書く -->
-  <h1 class="main_title">めんどくさがり屋のための割り勘アプリ</h1>
-
-  <div class="account">
-    <p class="request_account_info">アカウント情報を記載してください</p>
-    <textarea name="支払い情報" id="account_info" , placeholder="paypay:ABCD"></textarea>
+  <div id="title">
+    <div id="title_contents">
+      <h1 id="main_title">SONTAKU WARIKAN</h1>
+      <h2 id="sub_title">らくらく傾斜カリキュレーター</h2>
+    </div>
   </div>
 
-  <div class="save_btn_1">
-    <button class="save_account_btn">アカウント情報を保存する</button>
-  </div>
+  <div class="main">
+    <div class="account">
+      <div class="circle">
 
-  <div class="thank_you">
-    <p class="request_thank_you">お礼メッセージを記入してください</p>
-    <textarea name="コメント" id="thank_you_message" , placeholder="thank_you_message先日はありがとうございました"></textarea>
-  </div>
+        <h3>STEP 1</h3>
+      </div>
+      <div class="subtitle">
+        <h4 class="request_account_info">アカウント情報を記載してください</h4>
+      </div>
+      <div class="explanation">
 
-  <div class="save_btn_2">
-    <button class="save_btn">メッセージのテンプレートを保存する</button>
-  </div>
+        <p class="request_account_info">精算時の振込先情報などを記載してください</p>
+        <p class="request_account_info">アカウントの保存ボタンを押すことで、アカウント情報が保存され、</p>
+        <p class="request_account_info">次回の請求時にも利用が可能となります</p>
+        <p class="request_account_info">アカウント情報を削除したい場合は、アカウント情報削除ボタンを押してください</p>
 
-  <div class="number">
-    <p>参加者数を教えてください</p>
-    <input id="num_of_people" type="number">
-  </div>
+      </div>
+      <div class="contents">
+        <textarea name="支払い情報" id="account_info" , placeholder="paypay:ABCD"></textarea>
+      </div>
 
-  <div>
-    <button id="btn_ppl">参加人数を送信</button>
-  </div>
+      <div class="save_btn_1">
+        <button class="save_account_btn">アカウント情報を保存する</button>
+      </div>
 
-  <div class="exp">
-    <p class="exp_message">参加者の名前と、それぞれの人の負担額の割合のイメージをざっくり入れてください。</p>
-    <p class="exp_message">割合イメージの合計は、実際の会計額とずれていても問題はありません（適当でOKです）</p>
-    <p class="exp_message">大体の目安は、事業部長4000、部長3500,課長3000,メンバー2500くらいの値を入れればOKです</p>
-  </div>
+      <div class="rm_account">
+        <button class="rm_account_btn">アカウント情報を削除する</button>
+      </div>
+    </div>
 
 
-  <div class="title">
-    <h2 class="date_input">
-      <input type="datetime-local" name="" id="date_and_year">
-    </h2>
-  </div>
 
-  <!-- -----以下を削除するーーーーー -->
-  <!-- <div class="member">
+    <div class="thank_you">
+
+      <div class="circle">
+
+        <h3>STEP 2</h3>
+      </div>
+
+      <div class="subtitle">
+        <h4 class="request_thank_you">お礼メッセージを記入してください</h4>
+      </div>
+
+      <div class="explanation">
+
+        <p class="request_account_info">請求額だけ送ると、味気がないので、メッセージを送りましょう</p>
+        <p class="request_account_info">メッセージテンプレートの保存ボタンを押すことで、メッセージが保存され、</p>
+        <p class="request_account_info">次回の請求時にも利用が可能となります</p>
+        <p class="request_account_info">メッセージテンプレートを削除したい場合は、メッセージテンプレート削除ボタンを押してください</p>
+
+        <p class="request_account_info"></p>
+
+
+      </div>
+
+      <div class="contents">
+        <textarea name="コメント" id="thank_you_message" , placeholder="先日は懇親会のお時間をいただきありがとうございました
+以下にてお会計情報と支払い情報をご送付させていただきます
+お手数をおかけしますが、お手隙の際にご送付または手渡しいただけますと幸いです"></textarea>
+      </div>
+
+      <div class="save_btn_2">
+        <button class="save_btn">メッセージのテンプレートを保存する</button>
+      </div>
+
+      <div class="rm_template_message">
+        <button class="rm_msg_btn">メッセージテンプレートを削除する</button>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+    <div class="number">
+      <div class="circle">
+
+        <h3>STEP 3</h3>
+      </div>
+
+      <div class="subtitle">
+        <h4>参加者数を教えてください</h4>
+      </div>
+      <div class="contents">
+        <input id="num_of_people" type="number">
+      </div>
+      <div>
+        <button id="btn_ppl">参加人数を送信</button>
+      </div>
+    </div>
+
+    <div class="guess">
+      <div class="circle">
+
+        <h3>STEP 4</h3>
+      </div>
+      <div class="subtitle">
+        <h4>STEP 4-1</h4>
+        <h4>それぞれの参加者がどれくらいの割合で負担するか記載します</h4>
+      </div>
+
+      <div class="exp">
+        <p class="exp_message">参加者の名前と、それぞれの人の負担額の割合のイメージをざっくり入れてください。</p>
+        <p class="exp_message">割合イメージの合計は、実際の会計額とずれていても問題はありません（適当でOKです）</p>
+        <p class="exp_message">大体の目安は、事業部長4000、部長3500,課長3000,メンバー2500くらいの値を入れればOKです</p>
+      </div>
+
+    </div>
+
+
+
+    <div class="title">
+      <div class="subtitle">
+        <h4>STEP 4-2</h4>
+        <h4>飲み会を実施した日付を記入してください</h4>
+      </div>
+
+      <div class="explanation">
+        <h2 class="date_input">
+          <input type="datetime-local" name="" id="date_and_year">
+        </h2>
+      </div>
+
+    </div>
+
+    <!-- -----以下を削除するーーーーー -->
+    <!-- <div class="member">
     <div class="name">
       <h2 class="people1">参加者1</h2>
       <input type="text" class="people_name", id="people_name_1">
@@ -70,7 +163,7 @@
     </div>
   </div> -->
 
-  <!-- <div class="member2">
+    <!-- <div class="member2">
     <div class="name">
       <h2 class="people2">参加者2</h2>
       <input type="text" class="people2_name">
@@ -93,17 +186,27 @@
       <input type="number" name="メンバー" id="people3_exp">
     </div>
   </div> -->
-  <!-- -----ここまでーーーーー -->
+    <!-- -----ここまでーーーーー -->
 
-  <h2 class="money">使った金額</h2>
-  <input type="number" name="お金" id="value">
+    <div class="subtitle">
+      <h4>STEP 4-3</h4>
+      <h4 class="money">使った金額を記入してください</h4>
 
-  <div class="start">
-    <button id="start_btn">上記を保存して計算開始</button>
-  </div>
+      <div class="explanation">
+        <p>支払いの総計がくを入れた後、上記を保存して計算開始ボタンを押してください</p>
+        <p>各参加者の負担額が自動で計算され、さらに負担額を</p>
+        <input type="number" name="お金" id="value">
+      </div>
 
-  <!-- -----以下を削除するーーーーー -->
-  <!-- <div class="cal_result_1">
+      <div class="start">
+        <button id="start_btn">上記を保存して計算開始</button>
+      </div>
+    </div>
+
+
+
+    <!-- -----以下を削除するーーーーー -->
+    <!-- <div class="cal_result_1">
     <h2 class="people1_cal">参加者1の支払い金額</h2>
     <h2 class="people1_cal_val">計算結果</h2>
   </div>
@@ -120,39 +223,68 @@
 
   -->　<!-- -----ここまでーーーーー -->
 
-  <div class="btn_2">
-    <button class="create_msg_btn">メッセージを作る</button>
-  </div>
+    <div class="createMessage">
+      <!-- ここにけいさん結果が入ればベスト -->
+      <div class="circle">
 
-  <div class="message">
-    <textarea name="請求メッセージ" id="draft_message" placeholder="先日はありがとうございました"></textarea>
-  </div>
+        <h3>STEP 5</h3>
+      </div>
+      <div class="subtitle">
+        <h4>計算結果を反映したすぐに送信が可能なメッセージを作成します</h4>
+      </div>
+      <div class="btn_2">
+        <button class="create_msg_btn">メッセージを作る</button>
+      </div>
+    </div>
 
-  <div class="send_btn">
-    <button class="message_send_btn">データを保存する</button>
-  </div>
 
-    <div class="transfer">
-<a href="list.html">
-  <button type="button">一覧に戻る</button>
-</a>
+
+    <div class="message">
+      <div class="circle">
+
+        <h3>STEP 6</h3>
+      </div>
+      <div class="subtitle">
+        <h4>メッセージを送付してください</h4>
+      </div>
+      <div class="explanation">
+        <p>メッセージをSlackやメールなどで送付してください</p>
+        <p>なおメッセージの修正が必要な場合は直接変更が可能です</p>
+        <p>メールを送信したら情報を保存するために、データを保存するボタンを押してください</p>
+        <p>データベースに保管されるようになり、後から見返せるようになります</p>
+        <p>保存後は案件データを削除するボタンで案件毎の情報は削除しましょう</p>
+        <textarea name="請求メッセージ" id="draft_message" placeholder="先日はありがとうございました"></textarea>
+      </div>
+<div class="send_btn">
+      <button class="message_send_btn">データを保存する</button>
+    </div>
+    <div class="rm_contents">
+      <button class="rm_contents_btn">案件データを削除する</button>
+    </div>
 
     </div>
 
-  <div class="rm_contents">
-    <button class="rm_contents_btn">案件データを削除する</button>
-  </div>
 
-  <div class="rm_account">
+
+    <div class="transfer">
+      <a href="list.html">
+        <button id="return_home_btn" type="button">一覧に戻る</button>
+      </a>
+
+    </div>
+
+    
+    <!-- <div class="rm_account">
     <button class="rm_account_btn">アカウント情報を削除する</button>
-  </div>
+  </div> -->
 
-  <div class="rm_template_message">
-    <button class="rm_msg_btn">メッセージテンプレートを削除する</button>
-  </div>
+    <!-- <div class="rm_template_message">
+      <button class="rm_msg_btn">メッセージテンプレートを削除する</button>
+    </div> -->
 
-  <div class="output">
+    <div class="output">
 
+    </div>
   </div>
   <!-- ここから上にコードを書く -->
   <!-- この中に記述していく -->
