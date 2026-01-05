@@ -37,17 +37,17 @@
 
   <div class="number">
     <p>参加者数を教えてください</p>
-    <input id="num_of_people"  type="number">
+    <input id="num_of_people" type="number">
   </div>
 
-<div>
-  <button id="btn_ppl">参加人数を送信</button>
+  <div>
+    <button id="btn_ppl">参加人数を送信</button>
   </div>
 
   <div class="exp">
     <p class="exp_message">参加者の名前と、それぞれの人の負担額の割合のイメージをざっくり入れてください。</p>
     <p class="exp_message">割合イメージの合計は、実際の会計額とずれていても問題はありません（適当でOKです）</p>
-        <p class="exp_message">大体の目安は、事業部長4000、部長3500,課長3000,メンバー2500くらいの値を入れればOKです</p>
+    <p class="exp_message">大体の目安は、事業部長4000、部長3500,課長3000,メンバー2500くらいの値を入れればOKです</p>
   </div>
 
 
@@ -70,7 +70,7 @@
     </div>
   </div> -->
 
-   <!-- <div class="member2">
+  <!-- <div class="member2">
     <div class="name">
       <h2 class="people2">参加者2</h2>
       <input type="text" class="people2_name">
@@ -99,10 +99,10 @@
   <input type="number" name="お金" id="value">
 
   <div class="start">
-    <button class="start_btn">上記を保存して計算開始</button>
+    <button id="start_btn">上記を保存して計算開始</button>
   </div>
 
-<!-- -----以下を削除するーーーーー -->
+  <!-- -----以下を削除するーーーーー -->
   <!-- <div class="cal_result_1">
     <h2 class="people1_cal">参加者1の支払い金額</h2>
     <h2 class="people1_cal_val">計算結果</h2>
@@ -122,14 +122,25 @@
 
   <div class="btn_2">
     <button class="create_msg_btn">メッセージを作る</button>
-  </div> 
+  </div>
 
   <div class="message">
     <textarea name="請求メッセージ" id="draft_message" placeholder="先日はありがとうございました"></textarea>
   </div>
 
-    <div class="send_btn">
-    <button class="message_send_btn">メッセージを送信</button>
+  <div class="send_btn">
+    <button class="message_send_btn">データを保存する</button>
+  </div>
+
+    <div class="transfer">
+<a href="list.html">
+  <button type="button">一覧に戻る</button>
+</a>
+
+    </div>
+
+  <div class="rm_contents">
+    <button class="rm_contents_btn">案件データを削除する</button>
   </div>
 
   <div class="rm_account">
@@ -147,74 +158,7 @@
   <!-- この中に記述していく -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="js/main.js"></script>
-
-
-<script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
-        import { getDatabase, ref, push, set, onChildAdded, remove, onChildRemoved }
-            from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyBFnmrWfPrFyW-NEj7SITL1T_00hww-B0g",
-            authDomain: "dev30-f18-23c94.firebaseapp.com",
-            projectId: "dev30-f18-23c94",
-            storageBucket: "dev30-f18-23c94.firebasestorage.app",
-            messagingSenderId: "867812372908",
-            appId: "1:867812372908:web:98218493ec3170451b0a09"
-        };
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app); //RealtimeDBに接続
-        const dbRef = ref(db, "chat"); //RealtimeDB内の"chat"を使う
-
-        //データ登録(Click)
-        //送信
-        
-        $('.message_send_btn').on('click', function () {
-        
-            const msg = {
-                date : $('#date_and_year').val(),
-                message: $('#draft_message').val(),
-            }
-
-            const newPostRef = push(dbRef)
-            set(newPostRef, msg)
-
-
-            //この下は消さない
-        });
-
-        //データ登録(Enter)
-        onChildAdded(dbRef, function (data) {
-
-            const msg = data.val()
-            const key = data.key //keyの部分は課題またはごじしんで使用いただくための
-
-            const html = `
-                <div>
-                <p> -------------------------- </p>
-                <h2> ${msg.date} </h2>  
-                <p> ${msg.message} </p>
-                <p> -------------------------- </p>
-                <p> -------------------------- </p>
-                </div>
-            `
-
-            //jQueryを使って表示をさせたいのでappendというおまじないを使う
-            $('.output').append(html)
-            //この下は消さない
-        })
-
-        //最初にデータ取得＆onSnapshotでリアルタイムにデータを取得
-       
-        //この下は消さない
-      
-
-
-
-
-    </script>
-
+  <script type="module" src="js/firebase.js"></script>
 </body>
 
 </html>
