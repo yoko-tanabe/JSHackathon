@@ -5,6 +5,14 @@ sans-serif;
 
 }
 
+/* table{
+  font-size: 30px;
+}
+
+.msg, .stored_data{
+  font-size: 30px;
+} */
+
 
 
 textarea{
@@ -80,6 +88,40 @@ h3:after {
   background: linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
 }
 
+
+
+.save_account_btn,.save_btn , #btn_ppl,#start_btn, .message_send_btn, .create_msg_btn{
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: double 4px #67c5ff;
+  border-radius: 3px;
+    background: #f2fcff;
+  transition: .4s;
+}
+.save_account_btn:hover, .save_btn:hover , #btn_ppl:hover , #start_btn:hover, .message_send_btn:hover, .create_msg_btn:hover {
+  background: #5a79d3;
+  color: whitesmoke;
+}
+
+.rm_account_btn, .rm_msg_btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: dashed 1px #b5d8ee;
+  /* background: #f2fcff; */
+  
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.rm_account_btn:hover, .rm_msg_btn:hover {
+  background: #cbedff;
+  color: #FFF;
+}
+
 p{
  color: #333;
 }
@@ -90,6 +132,13 @@ p{
   flex-direction: column;
 justify-content: center;
 align-items: center;
+}
+
+.stored_data{
+/* display: flex; */
+/* justify-content: center; */
+/* align-items: center; */
+
 }
 
 .explanation,.exp {

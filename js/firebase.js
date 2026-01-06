@@ -125,15 +125,15 @@ onChildAdded(dbRef, function (data) {
 
     const html = `
                 <div>
-                <p> -------------------------- </p>
-                <h2> ID : ${key} </h2>  
-                <h2> DATE :${msg.date} </h2>  
-                <h2> MESSAGE </h2>  
-                <p> ${msg.message} </p>
-                <p> ${peopleHtml} </p>
-                <p> ${msg.account} </p>
-                <p> -------------------------- </p>
-                <p> -------------------------- </p>
+                <p class="msg"> -------------------------- </p>
+                <p class="msg"> ID : ${key} </p>  
+                <p class="msg"> DATE :${msg.date} </p>  
+                <p class="msg"> MESSAGE </p>  
+                <p class="msg"> ${msg.message} </p>
+                <p class="msg"> ${peopleHtml} </p>
+                <p class="msg"> ${msg.account} </p>
+                <p class="msg"> -------------------------- </p>
+                <p class="msg"> -------------------------- </p>
                 </div>
             `
 
@@ -161,6 +161,7 @@ html_table_data += `
 })
 
 const html_table = `
+<div class="table_div>
 <table class="table">
     <thead class="table_thread">
         <tr class="table_header">
@@ -176,6 +177,7 @@ const html_table = `
 
 
 </table>
+</div>
 `
 
 

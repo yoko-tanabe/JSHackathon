@@ -1,0 +1,98 @@
+/* 全体の表示エリア */
+.store {
+    max-width: 700px;
+    margin: 24px auto;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+}
+
+/* テーブル全体 */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ヘッダー */
+.table_thread {
+    background-color: #f5f7fa;
+}
+
+.table_header th {
+    padding: 12px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* ヘッダー文字 */
+.dataheader {
+    color: #555;
+}
+
+/* ボディ */
+.table_tboday {
+    background-color: #fff;
+}
+
+/* 行 */
+.table_contents {
+    transition: background-color 0.2s ease;
+}
+
+.table_contents:hover {
+    background-color: #f9fbff;
+}
+
+/* セル */
+.datacell {
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+/* チェックボックス */
+.checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* チェック済みの行を視覚的に分かりやすく */
+.checkbox:checked {
+    accent-color: #4f8ef7;
+}
+
+.checkbox:checked {
+    transform: scale(1.05);
+}
+
+/* チェックされた行（JSでクラス付与したくなった時用） */
+.table_contents.completed {
+    background-color: #f0f4f8;
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* 保存データのテキスト表示 */
+.stored_data {
+    font-size: 13px;
+    margin: 4px 0;
+    color: #444;
+}
+
+/* IDや区切り表示の余白調整 */
+.store h2 {
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.store p {
+    margin: 6px 0;
+}

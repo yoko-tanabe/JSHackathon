@@ -1,0 +1,126 @@
+/* =========================
+   全体
+========================= */
+.store {
+    max-width: 780px;
+    margin: 48px auto;
+    padding: 0 16px;
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    color: #2b2b2b;
+}
+
+/* =========================
+   テーブルをカード化
+========================= */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 14px; /* ← 縦感の正体 */
+    background: transparent;
+}
+
+/* ヘッダーは使わない前提で非表示 */
+.table_thread {
+    display: none;
+}
+
+/* =========================
+   1人分 = 1カード
+========================= */
+.table_contents {
+    background: linear-gradient(135deg, #ffffff, #f6f8fb);
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.table_contents:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   セルを縦並びに
+========================= */
+.datacell {
+    display: block;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+}
+
+/* 最後の区切り線を消す */
+.datacell:last-child {
+    border-bottom: none;
+}
+
+/* =========================
+   ラベルを擬似的に追加
+========================= */
+.datacell:nth-child(2)::before {
+    content: "NAME";
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: #8b95a5;
+    margin-bottom: 4px;
+}
+
+.datacell:nth-child(3)::before {
+    content: "AMOUNT";
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: #8b95a5;
+    margin-bottom: 4px;
+}
+
+/* =========================
+   金額の強調
+========================= */
+.datacell:nth-child(3) {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4a67ff;
+}
+
+/* =========================
+   チェックボックス
+========================= */
+.checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: #4a67ff;
+    cursor: pointer;
+}
+
+/* =========================
+   完了カード
+========================= */
+.table_contents.completed {
+    background: linear-gradient(135deg, #f1f3f6, #e6e9ee);
+    color: #9aa3ad;
+}
+
+.table_contents.completed .datacell:nth-child(3) {
+    color: #9aa3ad;
+    text-decoration: line-through;
+}
+
+/* =========================
+   保存データ表示
+========================= */
+.stored_data {
+    font-size: 13px;
+    margin: 4px 0;
+    color: #555;
+}
+
+/* =========================
+   モバイル最適化
+========================= */
+@media (max-width: 640px) {
+    .datacell {
+        padding: 12px 14px;
+    }
+}
